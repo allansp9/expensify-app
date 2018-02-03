@@ -12,20 +12,22 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref().set({
-  name: "Allan Pereira",
-  age: 26,
-  isSingle: true,
-  location: {
-    city: "Santos",
-    country: "Brazil"
-  }
-});
+database
+  .ref()
+  .set({
+    name: "Allan Pereira",
+    age: 26,
+    isSingle: true,
+    location: {
+      city: "Santos",
+      country: "Brazil"
+    }
+  })
+  .then(() => {
+    console.log("Data is saved!");
+  })
+  .catch(e => {
+    console.log("This failed", e);
+  });
 
-// database.ref().set("This is my data");
-
-database.ref("age").set(27);
-database.ref("attributes").set({
-  height: 185,
-  weight: 78
-});
+// database.ref("isSingle").remove();
