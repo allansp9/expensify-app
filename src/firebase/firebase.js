@@ -17,10 +17,14 @@ database
   .set({
     name: "Allan Pereira",
     age: 26,
-    isSingle: true,
+    stressLevel: 6,
+    job: {
+      title: "Software Developer",
+      company: "Google"
+    },
     location: {
       city: "Santos",
-      country: "Brazil"
+      country: "US"
     }
   })
   .then(() => {
@@ -29,5 +33,11 @@ database
   .catch(e => {
     console.log("This failed", e);
   });
+
+database.ref().update({
+  stressLevel: 9,
+  "job/company": "Amazon",
+  "location/city": "Seattle"
+});
 
 // database.ref("isSingle").remove();
