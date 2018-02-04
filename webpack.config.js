@@ -31,8 +31,18 @@ module.exports = env => {
           test: /\.s?css$/,
           use: CSSExtract.extract({
             use: [
-              { loader: "css-loader", options: { sourceMap: true } },
-              { loader: "sass-loader", options: { sourceMap: true } }
+              {
+                loader: "css-loader",
+                options: {
+                  sourceMap: true
+                }
+              },
+              {
+                loader: "sass-loader",
+                options: {
+                  sourceMap: true
+                }
+              }
             ]
           })
         }
@@ -41,7 +51,7 @@ module.exports = env => {
     plugins: [
       CSSExtract,
       new webpack.DefinePlugin({
-        "process.env.FIREBASE_AP_KEY": JSON.stringify(
+        "process.env.FIREBASE_API_KEY": JSON.stringify(
           process.env.FIREBASE_API_KEY
         ),
         "process.env.FIREBASE_AUTH_DOMAIN": JSON.stringify(
