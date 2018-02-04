@@ -3,12 +3,33 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import numeral from "numeral";
 
+numeral.register("locale", "pt-br", {
+  delimiters: {
+    thousands: ".",
+    decimal: ","
+  },
+  abbreviations: {
+    thousand: "mil",
+    million: "milhões",
+    billion: "b",
+    trillion: "t"
+  },
+  ordinal: function(number) {
+    return "º";
+  },
+  currency: {
+    symbol: "R$"
+  }
+});
+
+numeral.locale("pt-br");
+
 const ExpenseListItem = ({ description, amount, createdAt, id }) => (
   <Link className="list-item" to={`/edit/${id}`}>
     <div>
       <h3 className="list-item__title">{description}</h3>
       <span className="list-item__sub-title">
-        {moment(createdAt).format("MMMM Do, YYYY")}
+        {moment(createdAt).format("LL")}
       </span>
     </div>
     <h3 className="list-item__data">

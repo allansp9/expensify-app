@@ -38,7 +38,7 @@ export class ExpenseListFilters extends React.Component {
           <div className="input-group__item">
             <input
               type="text"
-              className="text-input"
+              className="text-input "
               placeholder="Search expenses"
               value={this.props.filters.text}
               onChange={this.onTextChange}
@@ -57,9 +57,9 @@ export class ExpenseListFilters extends React.Component {
           <div className="input-group__item">
             <DateRangePicker
               startDate={this.props.filters.startDate}
-              startDateId={"5654654"}
+              startDateId={"startDate"}
               endDate={this.props.filters.endDate}
-              endDateId={"87776"}
+              endDateId={"endDate"}
               onDatesChange={this.onDatesChange}
               focusedInput={this.state.calendarFocused}
               onFocusChange={this.onFocusChange}

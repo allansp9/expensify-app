@@ -2,6 +2,8 @@
 
 import moment from "moment";
 
+moment.locale("pt-br");
+
 export default (expenses, { text, sortBy, startDate, endDate }) => {
   return expenses
     .filter(expense => {
