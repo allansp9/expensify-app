@@ -1,18 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render Login Page 1`] = `
-<form
-  action=""
->
-  Login: 
-  <input
-    type="text"
-  />
-  Senha: 
-  <input
-    id=""
-    name="password"
-    type="password"
-  />
-</form>
+<div>
+  <button>
+    Entrar
+  </button>
+</div>
 `;
