@@ -6,18 +6,18 @@ import selectExpenses from "../selectors/expenses";
 import numeral from "numeral";
 
 export const ExpensesSummary = ({ expenseCount, expensesTotal }) => {
-  const expenseWord = expenseCount === 1 ? "expense" : "expenses";
+  const expenseWord = expenseCount === 1 ? "despesa, " : "despesas, ";
   const formattedExpensesTotal = numeral(expensesTotal / 100).format("$0,0.00");
 
   return (
     <div className="page-header">
       <div className="content-container">
         <h1 className="page-header__title">
-          Viewing <span>{expenseCount}</span> {expenseWord} totalling{" "}
+          Você tem <span>{expenseCount} </span> {expenseWord} totalizando:{" "}
           <span>{formattedExpensesTotal}</span>
           <div className="page-header__actions">
             <Link className="button" to="/create">
-              Add Expense
+              Adicionar
             </Link>
           </div>
         </h1>
